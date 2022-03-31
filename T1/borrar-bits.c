@@ -11,13 +11,24 @@ int posicionBits(int x, int p, int n) {
   }
   return -1;
 }
-unsigned repBitsOriginal(unsigned x, int i, int k, unsigned val) {
-  unsigned mask1 = ~((-1)<<k); // 000...011...1 con k unos
-  unsigned mask2 = mask1 << i; // 0...0 1^{k} 0^{i}
-  val <<= i;
-  x &= ~mask2;
-  x |= val;
-  return x;
+unsigned repBitsClase(unsigned x, int i, int k, unsigned val) {
+	unsigned x2 = x; // copia porque modificaremos x
+	// movemos x para que esté en la posición que nos resulta cómoda
+	x >>= i;
+
+	// desactivamos (apagamos, cambiamos a 0)
+	// los k bits que queremos reemplazar en x
+	unsigned m = -1 << k;
+	x &= m;
+
+	// agregamos los bits de reemplazo de val
+	x |= val;
+	// devolvemos x a su posición original
+	x <<= i;
+
+	// volvemos a poner los bits que perdimos
+	unsigned m2 = ~(-1 << i);
+	return x | (x2 & m2);
 }
 
 static char *to_binary(uint x) {
@@ -39,38 +50,53 @@ static char *to_binary(uint x) {
 }
 uint borrar_bits(uint x, uint pat, int len) {
   unsigned mask = x;
-  unsigned mask3 = 1;
-  mask3 <<= sizeof(x)*2;
-  mask = mask | mask3;
   unsigned mask2 = 0;
   int pos = 0;
   (mask2 <<= (len-1));
   mask2 <<= 1;
+  int count = 0;
+  if (pat == x){
+    x = 0;
+    return x;
+  }
   while (posicionBits(mask,pat,len)!=-1){
     if (pat == 0){
       break;
     }
+    else if (pat == x){
+      x = 0;
+    }
+   
     else{
-      printf("mask %s\n", to_binary(mask));
-      printf("pos bit %d\n", posicionBits(x, pat, len));
-      pos += posicionBits(mask,pat,len);
-      x = repBitsOriginal(x, pos, len, mask2);
-      pos += len;
-      printf("pos %d\n", pos);
+      if (pos == 32){
+        break;
+      }
+      else{
       printf("x %s\n", to_binary(x));
-      mask >>= pos;      
+      printf("mask %s\n", to_binary(mask));
+      printf("pos bit %d\n", posicionBits(mask, pat, len));
+      pos += posicionBits(mask,pat,len);
+      x = repBitsClase(x, pos, len, 0);
+      pos += len;
+      mask = x;
+      printf(" ret pos %d\n", pos);
+      printf(" ret x %s\n", to_binary(x));
+      printf("numero iteracion ");
+      mask >>= pos;
+
+      }
     }
 
   }
 //10001001
 //100110111
 //1101000
-
+  printf("termine");
   return x;
 }
-/*
+
 uint main() {
-  printf("repBitsClase(0b101010101, 0, 2, 00b11) == 0b%s\n", to_binary(borrar_bits(0b00010001001, 0b1,1)));
-  //printf("a%d\n", borrar_bits(0b00010001001,0b1,1));1101000011
+  printf("repBitsClase(0b101010101, 0, 2, 00b11) == 0b%s\n", to_binary(borrar_bits(0b11100011101010100111010001010000, 0b1,2)));
+  //printf("a%d\n", borrar_bits(0b00010001001,0b1,1));
   return 0;
-}*/
+}
