@@ -6,7 +6,7 @@ Midiendo cuanto demora la solucion del profesor
 rm -f tiempo-ref.txt
 chmod +x prof.ref
 ./prof.ref ref > /dev/null
-Tiempo de referencia =  1272
+Tiempo de referencia =  1266
 Verificando y comparando con su solucion
 ./borrar-bits.bin `cat tiempo-ref.txt`
 Tests unitarios
