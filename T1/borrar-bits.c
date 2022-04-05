@@ -51,53 +51,33 @@ static char *to_binary(uint x) {
 
 uint borrar_bits(uint x, uint pat, int len) {
   unsigned mask = x;
-  //unsigned mask2 = 0;
+  unsigned mask2 = ~((~0U << (len-1))<<1) ;//mascara de puros 1's cambiada a puros 0's
   int pos = 0;
-  //(mask2 <<= (len-1));
-  //mask2 <<= 1;
-
-
   if (pat == x){
-    x = 0;
+    x=0;
     return x;
   }
-  while (posicionBits(mask,pat,len)!=-1){
-    if (pat == 0){
-      break;
-    }
-    else if (pat == x){
-      x = 0;
-    }
-   
-    else{
-      if (pos == 32){
-        break;
-      }
-      else{
-      //printf("x %s\n", to_binary(x));
-      //printf("mask %s\n", to_binary(mask));
-      //printf("pos bit %d\n", posicionBits(mask, pat, len));
-      pos += posicionBits(mask,pat,len);
-      x = repBitsClase(x, pos, len, 0);
-      pos += len;
-      mask = x;
-      //printf(" ret pos %d\n", pos);
-      //printf(" ret x %s\n", to_binary(x));
-      //printf("numero iteracion ");
-      mask >>= pos;
-
-      }
-    }
-
+  if (pat == 0){
+    return x;
   }
-  
-
+  while (pos<(sizeof(x)*8-len+1)){
+    
+    if (((x >> pos) &mask2) == pat){
+      x = (x&~(mask2<<pos));
+      pos = (pos + len);
+      mask >>= len;
+    }
+    else{
+      mask>>=1;
+      pos ++;
+    }
+  }
   return x;
 }
 
 /*
 uint main() {
-  printf("repBitsClase(0b101010101, 0, 2, 00b11) == 0b%s\n", to_binary(borrar_bits(0b11100011, 0b10,2)));
+  printf("repBitsClase(0b101010101, 0, 2, 00b11) == 0b%s\n", to_binary(borrar_bits(0b111011001, 0b10,2)));
   //printf("a%d\n", borrar_bits(0b00010001001,0b1,1));
   return 0;
 }*/
