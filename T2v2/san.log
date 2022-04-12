@@ -1,20 +1,20 @@
 =================================================================
-==1707==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60600001feb2 at pc 0x5624d331a997 bp 0x7fffd42f9c70 sp 0x7fffd42f9c68
+==6136==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60600001feb2 at pc 0x55efb3eba997 bp 0x7fffa8577740 sp 0x7fffa8577738
 WRITE of size 1 at 0x60600001feb2 thread T0
-    #0 0x5624d331a996 in tests_lentos /mnt/c/Users/User/Documents/GitHub/PSS-2022/T2v2/test-elim.c:171
-    #1 0x5624d331c109 in main /mnt/c/Users/User/Documents/GitHub/PSS-2022/T2v2/test-elim.c:300
-    #2 0x7efd55e31d09 in __libc_start_main ../csu/libc-start.c:308
-    #3 0x5624d33182c9 in _start (/mnt/c/Users/User/Documents/GitHub/PSS-2022/T2v2/elim.bin-san+0x92c9)
+    #0 0x55efb3eba996 in tests_lentos /home/tomas/PSS-2022/T2v2/test-elim.c:171
+    #1 0x55efb3ebc109 in main /home/tomas/PSS-2022/T2v2/test-elim.c:300
+    #2 0x7f3cc6820d09 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55efb3eb82c9 in _start (/home/tomas/PSS-2022/T2v2/elim.bin-san+0x92c9)
 
 0x60600001feb2 is located 0 bytes to the right of 50-byte region [0x60600001fe80,0x60600001feb2)
 allocated by thread T0 here:
-    #0 0x7efd569e3e8f in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
-    #1 0x5624d3318931 in eliminacion_espacios /mnt/c/Users/User/Documents/GitHub/PSS-2022/T2v2/elim.c:41
-    #2 0x5624d331a68e in tests_lentos /mnt/c/Users/User/Documents/GitHub/PSS-2022/T2v2/test-elim.c:149
-    #3 0x5624d331c109 in main /mnt/c/Users/User/Documents/GitHub/PSS-2022/T2v2/test-elim.c:300
-    #4 0x7efd55e31d09 in __libc_start_main ../csu/libc-start.c:308
+    #0 0x7f3cc73d2e8f in __interceptor_malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:145
+    #1 0x55efb3eb8931 in eliminacion_espacios /home/tomas/PSS-2022/T2v2/elim.c:41
+    #2 0x55efb3eba68e in tests_lentos /home/tomas/PSS-2022/T2v2/test-elim.c:149
+    #3 0x55efb3ebc109 in main /home/tomas/PSS-2022/T2v2/test-elim.c:300
+    #4 0x7f3cc6820d09 in __libc_start_main ../csu/libc-start.c:308
 
-SUMMARY: AddressSanitizer: heap-buffer-overflow /mnt/c/Users/User/Documents/GitHub/PSS-2022/T2v2/test-elim.c:171 in tests_lentos
+SUMMARY: AddressSanitizer: heap-buffer-overflow /home/tomas/PSS-2022/T2v2/test-elim.c:171 in tests_lentos
 Shadow bytes around the buggy address:
   0x0c0c7fffbf80: 00 00 02 fa fa fa fa fa 00 00 00 00 00 00 02 fa
   0x0c0c7fffbf90: fa fa fa fa 00 00 00 00 00 00 02 fa fa fa fa fa
@@ -47,4 +47,4 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Left alloca redzone:     ca
   Right alloca redzone:    cb
   Shadow gap:              cc
-==1707==ABORTING
+==6136==ABORTING
