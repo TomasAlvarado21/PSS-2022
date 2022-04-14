@@ -9,8 +9,9 @@ void eliminar_espacios(char *s) {
   char *r = s;
   char *p = s;
   int i;
+  int a = strlen(s)+1;
 
-  for (i = 0; i < strlen(s)+1; i++){
+  for (i = 0; i < a; i++){
     if(*p == '\0'){
       *r = *p;
       break;
@@ -19,7 +20,7 @@ void eliminar_espacios(char *s) {
       p++;
       contador++;
     }
-    else if (*p == ' ' && contador == 0){
+    else if (*p == ' '){
       *r = *p;
       contador++;
       p++;
@@ -41,11 +42,4 @@ char *eliminacion_espacios(const char *s) {
   a = malloc(strlen(f)+1);
   strcpy(a,f);
   return a;
-}
-
-int main(){
-  char *resp = "hola       a    a   a    a fdsa   ";
-  eliminar_espacios(resp);
-  printf("%s es la respuesta", resp);
-  return 0;
 }
