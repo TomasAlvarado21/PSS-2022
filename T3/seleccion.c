@@ -41,7 +41,7 @@ Nodo *ultimos(Nodo *a, int *pk) {
   Nodo *left = ultimos(a->izq, &contador_izq);
   
   Nodo *b = malloc(sizeof(Nodo));
-  
+
   b->x = a->x;
   b->der = right;
   b->izq = left;
