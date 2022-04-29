@@ -46,7 +46,7 @@ void insertar(Nodo *nodo, int dato) {
 
 //int n;
 //Nodo **r= rama(a, 5, &n);
-Nodo **r = malloc(sizeof(Nodo)*100000);
+const Nodo **r = malloc(sizeof(Nodo)*100000);
 Nodo **busqueda(Nodo *a, int x, int *p){
     if (a == NULL){
         return 0;

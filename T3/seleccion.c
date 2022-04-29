@@ -30,7 +30,7 @@ Nodo *ultimos(Nodo *a, int *pk) {
   if(a == NULL){
     *pk = 0;
     return 0;
-  };
+  }
   
   Nodo *right = ultimos(a->der, &contador_der);
   if(contador_der == *pk){
