@@ -1,6 +1,6 @@
-pedro    
-juan     
 diego    
-ana      
+juan     
 francia  
-patricia 
+ana      
+diego    
+diego    

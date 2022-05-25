@@ -18,14 +18,14 @@ int main(int argc, char *argv[]) {
   }
   FILE *f = fopen(nom,"r+");
   //char *buff_inicio = malloc(10);
-  char buff_actual[10];
-  char buff_sgte[10];
+  char *buff_actual = malloc(10);
+  char *buff_sgte = malloc(10);
   //fread(buff_inicio, 10, 1, f);
   //int inicio = argv[0];
   int i = 2;
   while (i < argc){
     if (i == (argc-1)){
-      fseek(f, atoi(argv[1])*10, SEEK_SET);
+      fseek(f, atoi(argv[2])*10, SEEK_SET);
       fwrite(buff_sgte, 10, 1, f);
       printf("buff_sgte= %s \n",buff_sgte);
 
@@ -40,8 +40,8 @@ int main(int argc, char *argv[]) {
       fseek(f, atoi(argv[i+1])*10, SEEK_SET);
       fwrite(buff_actual, 10, 1, f);
       printf("buff_actual(else2)= %s \n",buff_actual);
-      strcpy(buff_actual, buff_sgte);
-      buff_actual[10] = '\0';
+      memcpy(buff_actual, buff_sgte, 10);
+      //buff_actual[10] = '\0';
     }
     i++;
   }
