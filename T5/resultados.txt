@@ -1,0 +1,59 @@
+Sistema operativo utilizado
+Linux DESKTOP-6L9EJ9T 5.10.102.1-microsoft-standard-WSL2 #1 SMP Wed Mar 2 00:30:59 UTC 2022 x86_64 GNU/Linux
+==== make sort-c-esp.run ====
+/opt/riscv/bin/riscv64-unknown-elf-gcc -g -c -Wall -pedantic -std=c2x -march=rv32im -mabi=ilp32 sort-c-esp.c -o sort-c-esp.o
+/opt/riscv/bin/riscv64-unknown-elf-gcc -g -c -Wall -pedantic -std=c2x -march=rv32im -mabi=ilp32 test-sort.c -o test-sort.o
+/opt/riscv/bin/riscv64-unknown-elf-gcc -Wall -pedantic -std=c2x -march=rv32im -mabi=ilp32 -g sort-c-esp.o test-sort.o  -o sort-c-esp
+qemu-riscv32 sort-c-esp
+Un arreglo bien ordenado: "a" "a"
+rc= 0Resultado: "a" "a"
+Otro arreglo bien ordenado: "a" "a a"
+rc= -1Resultado: "a" "a a"
+Un arreglo desordenado: "a a" "a"
+rc= 1rc= -1Resultado: "a" "a a"
+Otro arreglo desordenado: "abcd efgh" "abcdefgh"
+rc= 1rc= -1Resultado: "abcdefgh" "abcd efgh"
+Otro arreglo desordenado: "abc d ef ghi jklm" "abcd efghijklm"
+rc= 3rc= -3Resultado: "abcd efghijklm" "abc d ef ghi jklm"
+Arreglo con 3 strings desordenados: "ab bcd e" "a", "a a"
+rc= 2rc= -2rc= 1rc= -1rc= -1Resultado: "a" "a a" "ab bcd e"
+Ahora un arreglo de 10 strings
+El arreglo desordenado es:
+--------------------------
+ab cde fghi
+abc def gh ij kl
+yz
+mno q r s t v wxy
+d e f g h i j k l m
+l m
+z y x w
+j k l m n o p q r
+s t u v w 
+ c d e f g h 
+rc= -2rc= 4rc= 2rc= -2rc= -2rc= -2rc= -3rc= 8rc= -2rc= -2rc= -2rc= 5rc= -2rc= -2rc= 3rc= -2rc= 1rc= -1rc= -1rc= -2rc= -2rc= -3rc= 6rc= -1rc= -1rc= -2rc= -2rc= 3rc= -1rc= -1rc= -2rc= 1rc= -1rc= -1rc= -1rc= -1rc= -2rc= -3rc= 1rc= -1rc= -1rc= -1rc= -1rc= -2rc= -2rc= -1rc= 4rc= -1rc= -1rc= -1rc= -1rc= -2rc= -2rc= 3rc= -1rc= -1rc= -1rc= -1rc= -2rc= 1rc= -1rc= -1rc= -1rc= -1rc= -1rc= -1rc= -2rc= -1rc= 2rc= -1rc= -1rc= -1rc= -1rc= -1rc= -1rc= -2rc= 1rc= -1rc= -1rc= -1rc= -1rc= -1rc= -1rc= -1rc= -1rc= -1
+El arreglo ordenado es:
+-----------------------
+yz
+l m
+ab cde fghi
+z y x w
+abc def gh ij kl
+s t u v w 
+mno q r s t v wxy
+ c d e f g h 
+j k l m n o p q r
+d e f g h i j k l m
+Felicitaciones: test de prueba aprobado
+==== make sort-rv-esp.run ====
+/opt/riscv/bin/riscv64-unknown-elf-gcc -c -Wall -pedantic -std=c2x -march=rv32im -mabi=ilp32 sort-rv-esp.s -o sort-rv-esp.o
+/opt/riscv/bin/riscv64-unknown-elf-gcc -g -c -Wall -pedantic -std=c2x -march=rv32im -mabi=ilp32 test-sort.c -o test-sort.o
+/opt/riscv/bin/riscv64-unknown-elf-gcc -Wall -pedantic -std=c2x -march=rv32im -mabi=ilp32 -g sort-rv-esp.o test-sort.o  -o sort-rv-esp
+qemu-riscv32 sort-rv-esp
+Un arreglo bien ordenado: "a" "a"
+Resultado: "a" "a"
+Otro arreglo bien ordenado: "a" "a a"
+Resultado: "a" "a a"
+Un arreglo desordenado: "a a" "a"
+Resultado: "a" "a a"
+Otro arreglo desordenado: "abcd efgh" "abcdefgh"
+Resultado: "abcd efgh" "abcdefgh"
