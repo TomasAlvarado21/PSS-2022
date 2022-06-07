@@ -45,29 +45,32 @@ sort:                   # void sort(uint nums[], int n) { // registros a0, a1
     lw      a1,4(t0)
     li      t2,0        #     int esp_palabra1 = 0; // registro t2 
     li      t3,0        #     int esp_palabra2 = 0; // registro t3
+    li      a4,33
 
 .while1:
-    be     a0,--,.while2
+    lbu     a2,0(a0)    # a2 = *a0
+    beq     a2,zero,.while2
     #codigo del if
 .if1:
-    bne     a0,--,.else_p1
-    addi    t2,1
+    beq     a2,a4,.else_p1
 .else_p1:
-    addi    a0,1
+    addi    a0,a0,1
+    addi    t2,t2,1
     j       .while1
 
 .while2:
-    be     a1,--,.cargar_rc
+    lbu     a3,0(a1)    # a3 = *a1
+    beq     a3,zero,.cargar_rc
     #codigo del while1
 .if2:
-    bne     a1,--,.else_p2
-    addi    t3,1
+    beq     a3,a4,.else_p2
 .else_p2:
-    addi    a1,1
+    addi    a1,a1,1
+    addi    t3,t3,1
     j       .while2
 
 .cargar_rc:
-    sub     t1,t2,t3
+    sub     t1,t2,t3 
 
     # En el registro t1 debe quedar la conclusion de la comparacion:
     # si t1<=0 p[0] y p[1] estan en orden y no se intercambiaran.
