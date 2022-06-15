@@ -9,6 +9,10 @@
 #include <strings.h>
 
 void comp_dir(char * archivoA, char * archivoB){
+  struct stat buf;
+  stat(archivoA, &buf);
+  
+  
   return;
 }
 int main(int argc, char *argv[]) {
@@ -16,6 +20,5 @@ int main(int argc, char *argv[]) {
     fprintf(stderr, "uso: %s <arch|dir> <arch|dir>\n", argv[0]);
     exit(2);
   }
-  ... complete aca la funcion main ...
   return 0;
 }
