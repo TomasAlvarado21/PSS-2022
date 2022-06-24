@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+#include "fav.h"
+
+int favorables_par(int n, int sum, int rep, int p) {
+  ... programe aca su solucion ...
+}

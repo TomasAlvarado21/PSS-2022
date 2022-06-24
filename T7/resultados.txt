@@ -1,0 +1,7 @@
+Sistema operativo utilizado
+Linux DESKTOP-6L9EJ9T 5.10.102.1-microsoft-standard-WSL2 #1 SMP Wed Mar 2 00:30:59 UTC 2022 x86_64 GNU/Linux
+==== run-san ====
+gcc -g -DSAN=1 -fsanitize=address -fsanitize=undefined -DSANITIZE -Wall -Werror -std=c18  fav.c test-fav.c fav.h -lm -lpthread -o fav.bin-san
+./fav.bin-san
+Test 1: Un ejemplo pequeño con nlanz=2 sum=7 rep=1000000
+Calculando en paralelo

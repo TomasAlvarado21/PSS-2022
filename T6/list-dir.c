@@ -27,6 +27,7 @@ void listDir(char *nom) {
       perror(nom);
       exit(1);
     }
+    //
     for (struct dirent *entry = readdir(dir);
          entry != NULL;
          entry = readdir(dir)) {
@@ -40,6 +41,7 @@ void listDir(char *nom) {
       listDir(nom_arch);
       free(nom_arch);
     }
+    //
     closedir(dir);
   }
   else {
