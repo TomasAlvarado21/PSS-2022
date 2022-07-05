@@ -21,11 +21,6 @@ int favorables(int n, int sum, int rep) {
  return fav;
 }
 */
-// Function estimate the probability of throwing n dices , the sum of the results is equals to sum
-// the parameter rep simulates the throwing rep times the n dices, returning the cases that the sum of the results is equals to sum
-// we need to parallelize this function to estimate the probability of throwing n dices , the sum of the results is equals to sum using p cores
-// for that we need to invoke p times fork() to create p processes, each process will throw n dices and will sum the results, the sum of the results is equals to sum
-// p is the number of cores, we need to create p pipes, each pipe will be used by one process to communicate with the other processes
 int favorables_par(int n, int sum, int rep, int p){
   int fav= 0; // número de casos favorables
   int fds[p][2]; // pipes
