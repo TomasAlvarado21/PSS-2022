@@ -5,48 +5,48 @@ gcc -g -DSAN=1 -fsanitize=address -fsanitize=undefined -DSANITIZE -Wall -Werror 
 ./fav.bin-san
 Test 1: Un ejemplo pequeño con nlanz=2 sum=7 rep=1000000
 Calculando en paralelo
-Semilla inicial para proceso 518 es 227959833
-Semilla inicial para proceso 519 es 227959833
-Semilla inicial para proceso 520 es 227959833
-Semilla inicial para proceso 523 es 227959833
-Semilla inicial para proceso 522 es 227959833
-Semilla inicial para proceso 524 es 227959833
-Semilla inicial para proceso 525 es 227959833
-Semilla inicial para proceso 521 es 227959833
-Casos favorables con 125000 repeticiones para proceso 518=20768
-Casos favorables con 125000 repeticiones para proceso 520=20768
-Casos favorables con 125000 repeticiones para proceso 522=20768
-Casos favorables con 125000 repeticiones para proceso 521=20768
-Casos favorables con 125000 repeticiones para proceso 523=20768
-Casos favorables con 125000 repeticiones para proceso 519=20768
-Casos favorables con 125000 repeticiones para proceso 524=20768
-Casos favorables con 125000 repeticiones para proceso 525=20768
-fav=166144  pbb=0.166144  delta=0.000523
+Semilla inicial para proceso 884 es 189095626
+Semilla inicial para proceso 885 es 1806101031
+Semilla inicial para proceso 886 es 1082562870
+Semilla inicial para proceso 887 es 1615085959
+Semilla inicial para proceso 888 es 2092672169
+Semilla inicial para proceso 889 es 1957653797
+Semilla inicial para proceso 891 es 1934015074
+Semilla inicial para proceso 893 es 1533610132
+Casos favorables con 125000 repeticiones para proceso 885=21057
+Casos favorables con 125000 repeticiones para proceso 886=20874
+Casos favorables con 125000 repeticiones para proceso 887=20812
+Casos favorables con 125000 repeticiones para proceso 884=20878
+Casos favorables con 125000 repeticiones para proceso 889=20801
+Casos favorables con 125000 repeticiones para proceso 888=20742
+Casos favorables con 125000 repeticiones para proceso 891=20724
+Casos favorables con 125000 repeticiones para proceso 893=20756
+fav=166644  pbb=0.166644  delta=0.000023
 Test 1 aprobado
 
 --------------------------------------------------
 
 Test 2: Un ejemplo grande con nlanz=10 sum=30 rep=10000000
 Precalentando secuencialmente
-Semilla inicial para proceso 517 es 227959833
-Casos favorables con 20000 repeticiones para proceso 517=1035
-fav=1035 pbb=0.051750
+Semilla inicial para proceso 883 es 1533610132
+Casos favorables con 20000 repeticiones para proceso 883=987
+fav=987 pbb=0.049350
 Calculando secuencialmente con rep=2000000
-Semilla inicial para proceso 517 es 227959833
-Casos favorables con 2000000 repeticiones para proceso 517=96761
-Tiempo= 463, fav=96761 pbb=0.048380
+Semilla inicial para proceso 883 es 1533610132
+Casos favorables con 2000000 repeticiones para proceso 883=96677
+Tiempo= 1105, fav=96677 pbb=0.048338
 
 -----
 Calculando en paralelo con rep=2000000, intento 1
-Semilla inicial para proceso 534 es 227959833
-Semilla inicial para proceso 535 es 227959833
-Semilla inicial para proceso 536 es 227959833
-Semilla inicial para proceso 537 es 227959833
-Casos favorables con 500000 repeticiones para proceso 536=24326
-Casos favorables con 500000 repeticiones para proceso 537=24326
-Casos favorables con 500000 repeticiones para proceso 535=24326
-Casos favorables con 500000 repeticiones para proceso 534=24326
-Tiempo= 331  speedup= 1.39879  fav=97304  pbb=0.048652  delta=0.005612
+Semilla inicial para proceso 900 es 681398606
+Semilla inicial para proceso 901 es 1624784906
+Semilla inicial para proceso 902 es 835772299
+Semilla inicial para proceso 903 es 1207084917
+Casos favorables con 500000 repeticiones para proceso 900=24008
+Casos favorables con 500000 repeticiones para proceso 903=24231
+Casos favorables con 500000 repeticiones para proceso 902=24177
+Casos favorables con 500000 repeticiones para proceso 901=24353
+Tiempo= 359  speedup= 3.07799  fav=96769  pbb=0.048384  delta=0.000952
 Test 2 aprobado
 
 Felicitaciones: su tarea funciona
@@ -55,48 +55,48 @@ gcc -g -Wall -Werror -std=c18  fav.c test-fav.c fav.h -lm -lpthread -o fav.bin-g
 ./fav.bin-g
 Test 1: Un ejemplo pequeño con nlanz=2 sum=7 rep=1000000
 Calculando en paralelo
-Semilla inicial para proceso 558 es 957144924
-Semilla inicial para proceso 559 es 957144924
-Semilla inicial para proceso 560 es 957144924
-Semilla inicial para proceso 563 es 957144924
-Casos favorables con 125000 repeticiones para proceso 559=20668
-Casos favorables con 125000 repeticiones para proceso 558=20668
-Semilla inicial para proceso 564 es 957144924
-Casos favorables con 125000 repeticiones para proceso 560=20668
-Semilla inicial para proceso 561 es 957144924
-Semilla inicial para proceso 562 es 957144924
-Casos favorables con 125000 repeticiones para proceso 564=20668
-Semilla inicial para proceso 565 es 957144924
-Casos favorables con 125000 repeticiones para proceso 563=20668
-Casos favorables con 125000 repeticiones para proceso 562=20668
-Casos favorables con 125000 repeticiones para proceso 561=20668
-Casos favorables con 125000 repeticiones para proceso 565=20668
-fav=165344  pbb=0.165344  delta=0.001323
+Semilla inicial para proceso 924 es 1493705703
+Semilla inicial para proceso 925 es 1869673631
+Semilla inicial para proceso 926 es 1166658637
+Semilla inicial para proceso 929 es 607054685
+Casos favorables con 125000 repeticiones para proceso 924=21048
+Casos favorables con 125000 repeticiones para proceso 925=21114
+Semilla inicial para proceso 930 es 59808437
+Semilla inicial para proceso 928 es 454387718
+Casos favorables con 125000 repeticiones para proceso 926=20911
+Semilla inicial para proceso 927 es 1756000778
+Casos favorables con 125000 repeticiones para proceso 929=21207
+Casos favorables con 125000 repeticiones para proceso 930=21026
+Casos favorables con 125000 repeticiones para proceso 927=20637
+Semilla inicial para proceso 931 es 1431652196
+Casos favorables con 125000 repeticiones para proceso 928=20639
+Casos favorables con 125000 repeticiones para proceso 931=20855
+fav=167437  pbb=0.167437  delta=0.000770
 Test 1 aprobado
 
 --------------------------------------------------
 
 Test 2: Un ejemplo grande con nlanz=10 sum=30 rep=10000000
 Precalentando secuencialmente
-Semilla inicial para proceso 557 es 957144924
-Casos favorables con 200000 repeticiones para proceso 557=9675
-fav=9675 pbb=0.048375
+Semilla inicial para proceso 923 es 1431652196
+Casos favorables con 200000 repeticiones para proceso 923=9589
+fav=9589 pbb=0.047945
 Calculando secuencialmente con rep=20000000
-Semilla inicial para proceso 557 es 957144924
-Casos favorables con 20000000 repeticiones para proceso 557=969558
-Tiempo= 2567, fav=969558 pbb=0.048478
+Semilla inicial para proceso 923 es 1431652196
+Casos favorables con 20000000 repeticiones para proceso 923=971364
+Tiempo= 4542, fav=971364 pbb=0.048568
 
 -----
 Calculando en paralelo con rep=20000000, intento 1
-Semilla inicial para proceso 566 es 957144924
-Semilla inicial para proceso 567 es 957144924
-Semilla inicial para proceso 568 es 957144924
-Semilla inicial para proceso 569 es 957144924
-Casos favorables con 5000000 repeticiones para proceso 568=241601
-Casos favorables con 5000000 repeticiones para proceso 566=241601
-Casos favorables con 5000000 repeticiones para proceso 569=241601
-Casos favorables con 5000000 repeticiones para proceso 567=241601
-Tiempo= 1010  speedup= 2.54158  fav=966404  pbb=0.048320  delta=0.003253
+Semilla inicial para proceso 932 es 1199733689
+Semilla inicial para proceso 933 es 2126188082
+Semilla inicial para proceso 935 es 184263343
+Semilla inicial para proceso 934 es 174727504
+Casos favorables con 5000000 repeticiones para proceso 934=242526
+Casos favorables con 5000000 repeticiones para proceso 935=242632
+Casos favorables con 5000000 repeticiones para proceso 933=242439
+Casos favorables con 5000000 repeticiones para proceso 932=242845
+Tiempo= 1275  speedup= 3.56235  fav=970442  pbb=0.048522  delta=0.000949
 Test 2 aprobado
 
 Felicitaciones: su tarea funciona
@@ -105,48 +105,48 @@ gcc -O -DOPT=1 -Wall -Werror -std=c18  fav.c test-fav.c fav.h -lm -lpthread -o f
 ./fav.bin
 Test 1: Un ejemplo pequeño con nlanz=2 sum=7 rep=1000000
 Calculando en paralelo
-Semilla inicial para proceso 585 es 409028806
-Semilla inicial para proceso 586 es 409028806
-Semilla inicial para proceso 587 es 409028806
-Semilla inicial para proceso 590 es 409028806
-Casos favorables con 125000 repeticiones para proceso 585=20817
-Casos favorables con 125000 repeticiones para proceso 586=20817
-Semilla inicial para proceso 591 es 409028806
-Casos favorables con 125000 repeticiones para proceso 587=20817
-Semilla inicial para proceso 592 es 409028806
-Semilla inicial para proceso 589 es 409028806
-Casos favorables con 125000 repeticiones para proceso 590=20817
-Casos favorables con 125000 repeticiones para proceso 591=20817
-Casos favorables con 125000 repeticiones para proceso 589=20817
-Casos favorables con 125000 repeticiones para proceso 592=20817
-Semilla inicial para proceso 588 es 409028806
-Casos favorables con 125000 repeticiones para proceso 588=20817
-fav=166536  pbb=0.166536  delta=0.000131
+Semilla inicial para proceso 951 es 915648052
+Semilla inicial para proceso 952 es 1464883289
+Casos favorables con 125000 repeticiones para proceso 951=20946
+Casos favorables con 125000 repeticiones para proceso 952=20988
+Semilla inicial para proceso 953 es 1257874665
+Semilla inicial para proceso 954 es 1885625150
+Casos favorables con 125000 repeticiones para proceso 953=20829
+Casos favorables con 125000 repeticiones para proceso 954=21097
+Semilla inicial para proceso 955 es 862335347
+Casos favorables con 125000 repeticiones para proceso 955=21091
+Semilla inicial para proceso 956 es 1509281280
+Semilla inicial para proceso 957 es 585487232
+Semilla inicial para proceso 958 es 506012471
+Casos favorables con 125000 repeticiones para proceso 956=20827
+Casos favorables con 125000 repeticiones para proceso 957=20736
+Casos favorables con 125000 repeticiones para proceso 958=20767
+fav=167281  pbb=0.167281  delta=0.000614
 Test 1 aprobado
 
 --------------------------------------------------
 
 Test 2: Un ejemplo grande con nlanz=10 sum=30 rep=10000000
 Precalentando secuencialmente
-Semilla inicial para proceso 584 es 409028806
-Casos favorables con 200000 repeticiones para proceso 584=9615
-fav=9615 pbb=0.048075
+Semilla inicial para proceso 950 es 506012471
+Casos favorables con 200000 repeticiones para proceso 950=9831
+fav=9831 pbb=0.049155
 Calculando secuencialmente con rep=20000000
-Semilla inicial para proceso 584 es 409028806
-Casos favorables con 20000000 repeticiones para proceso 584=970423
-Tiempo= 663, fav=970423 pbb=0.048521
+Semilla inicial para proceso 950 es 506012471
+Casos favorables con 20000000 repeticiones para proceso 950=969588
+Tiempo= 1222, fav=969588 pbb=0.048479
 
 -----
 Calculando en paralelo con rep=20000000, intento 1
-Semilla inicial para proceso 593 es 409028806
-Semilla inicial para proceso 594 es 409028806
-Semilla inicial para proceso 595 es 409028806
-Semilla inicial para proceso 596 es 409028806
-Casos favorables con 5000000 repeticiones para proceso 596=241889
-Casos favorables con 5000000 repeticiones para proceso 594=241889
-Casos favorables con 5000000 repeticiones para proceso 595=241889
-Casos favorables con 5000000 repeticiones para proceso 593=241889
-Tiempo= 374  speedup= 1.77273  fav=967556  pbb=0.048378  delta=0.002954
+Semilla inicial para proceso 959 es 260872383
+Semilla inicial para proceso 960 es 1858881152
+Semilla inicial para proceso 961 es 1318851213
+Semilla inicial para proceso 962 es 1007022862
+Casos favorables con 5000000 repeticiones para proceso 961=242853
+Casos favorables con 5000000 repeticiones para proceso 960=241735
+Casos favorables con 5000000 repeticiones para proceso 959=242440
+Casos favorables con 5000000 repeticiones para proceso 962=243003
+Tiempo= 361  speedup= 3.38504  fav=970031  pbb=0.048502  delta=0.000457
 Test 2 aprobado: speedup >= 1.5x
 
 Felicitaciones: su tarea funciona

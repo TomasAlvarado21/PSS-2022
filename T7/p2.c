@@ -66,3 +66,11 @@ int main(int argc, char* argv[]){
 
 	return 0;
 }
+
+// explain the code:
+// - N_CORES: número de procesos
+// - PRIMO: primo
+// - res: divisor de 67543411
+// explain the code:
+// - buscar_factor_par: busca el divisor de 67543411 en [2, PRIMO-1]
+// - x: 67543411
